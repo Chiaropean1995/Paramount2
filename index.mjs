@@ -4,8 +4,8 @@ import cors from "cors";
 import pg from "pg";
 const { Pool } = pg;
 import dotenv from "dotenv";
-
 dotenv.config();
+
 const { DATABASE_URL } = process.env;
 
 
