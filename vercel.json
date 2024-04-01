@@ -1,6 +1,6 @@
 {
     "version": 1,
-    "name": "paramount2",
+    "name": "Paramount2",
     "build": [
         {
             "src": "index.mjs",
