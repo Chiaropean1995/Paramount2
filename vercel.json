@@ -1,9 +1,16 @@
 {
+    "version": 1,
+    "name": "paramount2",
+    "build": [
+        {
+            "src": "index.mjs",
+            "use": "@vercel/node"
+        }
+    ],
     "routes": [
         {
             "src": "/[^.]+",
-            "dest": "/",
-            "status": 200
+            "dest": "/index.mjs"
         }
     ]
 }
