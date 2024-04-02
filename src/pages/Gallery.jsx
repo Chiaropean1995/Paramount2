@@ -65,8 +65,8 @@ export default function Gallery() {
         setSelectedImage(null);
     };
 
-    const handleDelete = async (id, e) => {
-        e.stopPropagation();
+    const handleDelete = async (id) => {
+
         try {
             await axios.delete(`${url}/projectimages/${id}`);
             const updatedImages = images.filter(image => image.id !== id);

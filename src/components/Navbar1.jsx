@@ -1,4 +1,4 @@
-import companylogo from "../assets/companylogo.jpeg"
+import companylogo2 from "../assets/companylogo2.png"
 import { Link } from "react-router-dom"
 import { Navbar, Container, Nav, NavDropdown } from "react-bootstrap"
 import { Button, Modal, Form } from "react-bootstrap";
@@ -84,9 +84,10 @@ export default function Navbar1() {
                 <Container>
                     <Navbar.Brand as={Link} to="/profilepage">
                         <img
-                            src={companylogo}
+                            src={companylogo2}
                             alt="Your Logo"
-                            height="70"
+                            height="90"
+                            width="200px"
                             className="d-inline-block align-top"
                         />
                     </Navbar.Brand>

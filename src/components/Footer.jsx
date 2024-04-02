@@ -4,7 +4,7 @@ import "../App.css"
 import { useRef } from "react"
 import axios from "axios"
 
-import companylogo1 from "../assets/companylogo1.png"
+import companylogo2 from "../assets/companylogo2.png"
 import { useState } from "react";
 
 export default function Footer() {
@@ -64,7 +64,7 @@ export default function Footer() {
                                 <div className="col-md-12 text-center py-4">
                                     <Row>
                                         <Col sm={12} md={3} className="ms-0">
-                                            <img src={companylogo1} alt="Your Logo" height="70" style={{ marginLeft: "60px" }} />
+                                            <img src={companylogo2} alt="Your Logo" height="100" width="250px" style={{ marginLeft: "60px" }} />
                                             <div className=" ms-5 p-3">
                                                 <p className="text-white mt-4" style={{ textAlign: "left" }}>
                                                     Building extraordinary properties demands exceptional
@@ -87,15 +87,15 @@ export default function Footer() {
                                                     <ul className="list-unstyled">
                                                         <li className="d-flex text-white mt-5">
                                                             <div><i className="fa-solid fa-location-dot me-3"></i></div>
-                                                            17B, Jalan Taman, Off Jalan Melayu,41400, Klang, Selangor.
+                                                            20B, Jalan Taman, Selangor.
                                                         </li>
                                                         <li className="d-flex text-white mt-5">
                                                             <div><i className="fa-solid fa-phone me-3"></i></div>
-                                                            +60-3344 5988
+                                                            +60-XXXX XXXX
                                                         </li>
                                                         <li className="d-flex text-white mt-5">
                                                             <div><i className="fa-regular fa-envelope me-3"></i></div>
-                                                            paramountvalley@live.com
+                                                            paramount@live.com
                                                         </li>
                                                     </ul>
                                                 </div>
