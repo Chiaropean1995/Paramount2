@@ -12,7 +12,7 @@ import CompleteProjectCard from '../components/CompleteProjectCard';
 
 
 export default function CompletedProjects() {
-    const url = "https://paramount2-6.onrender.com/"
+    const url = "http://localhost:3000"
     const [completedProjects, setCompletedProject] = useState([])
     const { currentUser } = useContext(AuthContext);
     const [loading, setLoading] = useState(true);

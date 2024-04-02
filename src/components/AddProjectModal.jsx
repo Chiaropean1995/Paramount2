@@ -6,7 +6,7 @@ import axios from "axios"
 
 
 export default function AddProjectModal({ onAddProject }) {
-    const url = "https://paramount2-6.onrender.com/"
+    const url = "http://localhost:3000"
     const [show, setShow] = useState(false);
     const [imageUrl, setImageURL] = useState(null);
     const [file, setFile] = useState(null);
