@@ -14,7 +14,7 @@ export default function CompleteProjectCard({ id, price, image_url, title, locat
     const [completedProjects, setCompletedProject] = useState([])
     const [showModal, setShowModal] = useState(false);
     const [updatedImage, setUpdatedImage] = useState(null);
-    const url = "http://localhost:3000"
+    const url = "https://paramount2-4.onrender.com/"
 
     const fetchCompletedProjects = async () => {
         try {
