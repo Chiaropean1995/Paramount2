@@ -8,7 +8,7 @@ import axios from "axios"
 
 export default function AdminManagement() {
     const [contacts, setContacts] = useState([]);
-    const url = 'http://localhost:3000'
+    const url = 'https://paramount2-6.onrender.com/'
 
 
 
