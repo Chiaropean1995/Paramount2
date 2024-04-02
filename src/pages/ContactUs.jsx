@@ -8,7 +8,7 @@ import axios from "axios"
 
 
 export default function ContactUs() {
-    const url = "https://paramount2-4.onrender.com/"
+    const url = "http://localhost:3000"
     const [contacts, addContacts] = useState([]);
     const [formData, setFormData] = useState({
         name: '',

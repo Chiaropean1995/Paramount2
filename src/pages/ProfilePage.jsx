@@ -17,7 +17,7 @@ import { AuthContext } from "../components/AuthProvider";
 
 const PAGE_SIZE = 9
 export default function ProfilePage() {
-    const url = "https://paramount2-4.onrender.com/"
+    const url = "http://localhost:3000"
     const [projects, setProjects] = useState([]);
     const [loading, setLoading] = useState(true);
     const [currentPage, setCurrentPage] = useState(1);

@@ -8,7 +8,7 @@ import companylogo2 from "../assets/companylogo2.png"
 import { useState } from "react";
 
 export default function Footer() {
-    const url = "https://paramount2-4.onrender.com/"
+    const url = "http://localhost:3000"
     const formRef = useRef(null);
     const [isVisible, setIsVisible] = useState(false);
     const [email, setEmail] = useState("");

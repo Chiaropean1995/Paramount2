@@ -13,7 +13,7 @@ import AddUpcomingProjectModal from '../components/AddUpcomingProjectModal'
 
 export default function UpcomingProjects() {
     const { currentUser } = useContext(AuthContext);
-    const url = "https://paramount2-4.onrender.com/"
+    const url = "http://localhost:3000"
     const [upcomingProjects, setUpcomingProject] = useState([]);
     const [loading, setLoading] = useState(true);
 

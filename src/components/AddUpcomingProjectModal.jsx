@@ -9,7 +9,7 @@ import axios from "axios"
 
 
 export default function AddUpcomingProjectModal() {
-    const url = "https://paramount2-4.onrender.com/"
+    const url = "http://localhost:3000"
     const [show, setShow] = useState(false);
     const [imageUrl, setImageURL] = useState(null);
     const [file, setFile] = useState(null);
