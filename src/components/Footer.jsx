@@ -60,7 +60,7 @@ export default function Footer() {
                     <div className="bg-light">
                         {/* Middle layer */}
                         <div className="container-fluid px-0">
-                            <div className="row extended-background2" style={{ backgroundColor: "grey", height: "500px", width: "400px" }}>
+                            <div className="row extended-background2" style={{ backgroundColor: "grey", height: "500px" }}>
                                 <div className="col-md-12 text-center py-4">
                                     <Row>
                                         <Col sm={12} md={3} className="ms-0">
