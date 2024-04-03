@@ -80,75 +80,73 @@ export default function Gallery() {
 
     return (
         <>
-            <div className="overflow-hidden">
-                <Header />
-                <Navbar1 />
-                <Container fluid>
-                    <Row>
-                        <Col sm={12} className="p-0 position-relative">
-                            <img src={picture2} alt="Your image" height="250px" className="w-100" style={{ filter: 'brightness(0.3)' }} />
-                        </Col>
-                        <h2 style={{ fontFamily: '"Source Sans Pro", sans-serif', left: '60px', top: '250px' }} className="font-weight-bold position-absolute text-white">GALLERY</h2>
-                    </Row>
-                </Container>
-                <section style={{ paddingTop: "100px" }}>
-                    <Col sm={12} className="d-flex align-items-center justify-content-center" style={{ marginBottom: "20px" }}>
-                        {currentUser && currentUser.email === "user@admin.com" && (
-                            <AddGalleryImage onAddImage={handleAddProject} />
-                        )}
+            <Header />
+            <Navbar1 />
+            <Container fluid>
+                <Row>
+                    <Col sm={12} className="p-0 position-relative">
+                        <img src={picture2} alt="Your image" height="250px" className="w-100" style={{ filter: 'brightness(0.3)' }} />
                     </Col>
-                    {loading ? (
-                        <div style={{ display: 'flex', justifyContent: 'center' }}>
-                            <Spinner animation="border" variant="primary" style={{ width: '5rem', height: '5rem' }} />
-                        </div>
-                    ) : (
-                        <Container>
-                            <Row className="justify-content-center">
-                                {currentImages.map((image, index) => (
-                                    <Col key={index} xs={12} md={4} className="mb-4" onClick={() => handleImageClick(image)}>
-                                        <div className="image-container position-relative">
-                                            <img src={image.galleryimage} alt={`Image ${index}`} className="img-fluid" style={{ width: '400px', maxHeight: '300px', cursor: 'pointer' }} />
-                                            {currentUser && currentUser.email === "user@admin.com" && (
-                                                <div className="delete-btn-container d-flex justify-content-center">
-                                                    <Button variant="danger" className="delete-btn" onClick={(e) => { handleDelete(image.id); e.stopPropagation(); }}>Delete</Button>
-                                                </div>
-                                            )}
-                                        </div>
-                                    </Col>
-                                ))}
-                            </Row>
-                            <Row className="justify-content-center mt-3">
-                                <Button
-                                    variant="outline-primary"
-                                    onClick={handlePrevPage}
-                                    disabled={currentPage === 1}
-                                    style={{ width: "100px", height: "40px", display: "flex", alignItems: "center", justifyContent: "flex-start", backgroundColor: "white", color: "blue", borderRadius: "10px" }}
-                                >
-                                    <i className="bi bi-arrow-left"></i> Previous
-                                </Button>
-                                <Button
-                                    variant="outline-primary"
-                                    onClick={handleNextPage}
-                                    disabled={currentPage === totalPages}
-                                    style={{ width: "100px", height: "40px", backgroundColor: "white", color: "blue", marginLeft: "10px", borderRadius: "10px" }}
-                                >
-                                    Next <i className="bi bi-arrow-right"></i>
-                                </Button>
-                            </Row>
-                            <Modal show={!!selectedImage} onHide={handleCloseModal}>
-                                <Modal.Header closeButton>
-                                </Modal.Header>
-                                <Modal.Body>
-                                    {selectedImage && (
-                                        <img src={selectedImage.galleryimage} alt="Zoomed Image" className="img-fluid" style={{ maxHeight: '80vh', maxWidth: '100%' }} />
-                                    )}
-                                </Modal.Body>
-                            </Modal>
-                        </Container>
+                    <h2 style={{ fontFamily: '"Source Sans Pro", sans-serif', left: '60px', top: '250px' }} className="font-weight-bold position-absolute text-white">GALLERY</h2>
+                </Row>
+            </Container>
+            <section style={{ paddingTop: "100px" }}>
+                <Col sm={12} className="d-flex align-items-center justify-content-center" style={{ marginBottom: "20px" }}>
+                    {currentUser && currentUser.email === "user@admin.com" && (
+                        <AddGalleryImage onAddImage={handleAddProject} />
                     )}
-                </section>
-                <Footer />
-            </div>
+                </Col>
+                {loading ? (
+                    <div style={{ display: 'flex', justifyContent: 'center' }}>
+                        <Spinner animation="border" variant="primary" style={{ width: '5rem', height: '5rem' }} />
+                    </div>
+                ) : (
+                    <Container>
+                        <Row className="justify-content-center">
+                            {currentImages.map((image, index) => (
+                                <Col key={index} xs={12} md={4} className="mb-4" onClick={() => handleImageClick(image)}>
+                                    <div className="image-container position-relative">
+                                        <img src={image.galleryimage} alt={`Image ${index}`} className="img-fluid" style={{ width: '400px', maxHeight: '300px', cursor: 'pointer' }} />
+                                        {currentUser && currentUser.email === "user@admin.com" && (
+                                            <div className="delete-btn-container d-flex justify-content-center">
+                                                <Button variant="danger" className="delete-btn" onClick={(e) => { handleDelete(image.id); e.stopPropagation(); }}>Delete</Button>
+                                            </div>
+                                        )}
+                                    </div>
+                                </Col>
+                            ))}
+                        </Row>
+                        <Row className="justify-content-center mt-3">
+                            <Button
+                                variant="outline-primary"
+                                onClick={handlePrevPage}
+                                disabled={currentPage === 1}
+                                style={{ width: "100px", height: "40px", display: "flex", alignItems: "center", justifyContent: "flex-start", backgroundColor: "white", color: "blue", borderRadius: "10px" }}
+                            >
+                                <i className="bi bi-arrow-left"></i> Previous
+                            </Button>
+                            <Button
+                                variant="outline-primary"
+                                onClick={handleNextPage}
+                                disabled={currentPage === totalPages}
+                                style={{ width: "100px", height: "40px", backgroundColor: "white", color: "blue", marginLeft: "10px", borderRadius: "10px" }}
+                            >
+                                Next <i className="bi bi-arrow-right"></i>
+                            </Button>
+                        </Row>
+                        <Modal show={!!selectedImage} onHide={handleCloseModal}>
+                            <Modal.Header closeButton>
+                            </Modal.Header>
+                            <Modal.Body>
+                                {selectedImage && (
+                                    <img src={selectedImage.galleryimage} alt="Zoomed Image" className="img-fluid" style={{ maxHeight: '80vh', maxWidth: '100%' }} />
+                                )}
+                            </Modal.Body>
+                        </Modal>
+                    </Container>
+                )}
+            </section>
+            <Footer />
         </>
     );
 }

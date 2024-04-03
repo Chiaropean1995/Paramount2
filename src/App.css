@@ -35,12 +35,6 @@
 
 }
 
-@media (max-width: 567px) {
-  .overflow-hidden {
-    overflow-x: hidden;
-  }
-}
-
 
 
 @media (max-width: 567px) {

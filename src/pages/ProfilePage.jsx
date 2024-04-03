@@ -99,95 +99,93 @@ export default function ProfilePage() {
 
     return (
         <>
-            <div className="overflow-hidden">
-                <Header />
-                <Navbar1 />
-                <Container fluid>
-                    <Row>
-                        <Col sm={12} className="p-0">
-                            <Carousel
-                                activeIndex={currentPictureIndex}
-                                onSelect={(index) => setCurrentPictureIndex(index)}
-                                interval={5000} // 5 seconds interval
-                                pause={false} // Prevent pausing on hover
-                                className="carousel-container"
-                            >
-                                {pictures.map((picture, index) => (
-                                    <Carousel.Item key={index} className="carousel-item">
-                                        <img src={picture.src} alt={`Slide ${index + 1}`} className="d-block w-100 carousel-image" />
-                                        <Carousel.Caption>
-                                            <h3>{picture.label}</h3>
-                                            <p>{picture.description}</p>
-                                        </Carousel.Caption>
-                                    </Carousel.Item>
-                                ))}
-                            </Carousel>
-                        </Col>
+            <Header />
+            <Navbar1 />
+            <Container fluid>
+                <Row>
+                    <Col sm={12} className="p-0">
+                        <Carousel
+                            activeIndex={currentPictureIndex}
+                            onSelect={(index) => setCurrentPictureIndex(index)}
+                            interval={5000} // 5 seconds interval
+                            pause={false} // Prevent pausing on hover
+                            className="carousel-container"
+                        >
+                            {pictures.map((picture, index) => (
+                                <Carousel.Item key={index} className="carousel-item">
+                                    <img src={picture.src} alt={`Slide ${index + 1}`} className="d-block w-100 carousel-image" />
+                                    <Carousel.Caption>
+                                        <h3>{picture.label}</h3>
+                                        <p>{picture.description}</p>
+                                    </Carousel.Caption>
+                                </Carousel.Item>
+                            ))}
+                        </Carousel>
+                    </Col>
+                </Row>
+            </Container>
+
+
+            <section className="latest-projects" style={{ paddingTop: "50px" }}>
+                <Container>
+                    <p className="text-center" style={{ fontStyle: 'italic', color: "grey" }}>Properties for sale</p>
+                    <h2 className="text-center mb-4">OUR LATEST PROJECT LISTINGS</h2>
+
+                    <Col sm={12} className="d-flex align-items-center justify-content-center" style={{ marginBottom: "20px" }}>
+                        {currentUser && currentUser.email === "user@admin.com" && (
+                            <AddProjectModal onAddProject={handleAddProject} />
+                        )}
+                    </Col>
+                    {loading ? ( // Render spinner if loading
+                        <div style={{ display: 'flex', justifyContent: 'center' }}>
+                            <Spinner animation="border" variant="primary" style={{ width: '5rem', height: '5rem' }} />
+                        </div>
+                    ) : (
+                        <Row >
+                            {currentProjects.map((project, index) => (
+                                <Col key={index} sm={12} md={4} className="mb-5">
+                                    <ProjectCard
+                                        key={project.id}
+                                        id={project.id}
+                                        price={project.price}
+                                        image_url={project.image_url}
+                                        title={project.title}
+                                        location={project.location}
+                                        description={project.description}
+                                        car_park={project.car_park}
+                                        bathroom={project.bathroom}
+                                        bedroom={project.bedroom}
+                                        room_size={project.room_size}
+                                        progress_percentage={project.progress_percentage}
+                                        onDelete={() => handleDeleteProject(project.id)}
+                                    />
+
+                                </Col>
+                            ))}
+                        </Row>
+
+                    )}
+                    <Row className="justify-content-center mt-3">
+                        <Button
+                            variant="outline-primary"
+                            onClick={handlePrevPage}
+                            disabled={currentPage === 1}
+                            style={{ width: "100px", height: "40px", display: "flex", alignItems: "center", justifyContent: "flex-start", backgroundColor: "white", color: "blue", borderRadius: "10px" }}
+                        >
+                            <i className="bi bi-arrow-left"></i> Previous
+                        </Button>
+                        <Button
+                            variant="outline-primary"
+                            onClick={handleNextPage}
+                            disabled={currentPage === totalPages}
+                            style={{ width: "100px", height: "40px", backgroundColor: "white", color: "blue", marginLeft: "10px", borderRadius: "10px" }}
+                        >
+                            Next <i className="bi bi-arrow-right"></i>
+                        </Button>
                     </Row>
                 </Container>
-
-
-                <section className="latest-projects" style={{ paddingTop: "50px" }}>
-                    <Container>
-                        <p className="text-center" style={{ fontStyle: 'italic', color: "grey" }}>Properties for sale</p>
-                        <h2 className="text-center mb-4">OUR LATEST PROJECT LISTINGS</h2>
-
-                        <Col sm={12} className="d-flex align-items-center justify-content-center" style={{ marginBottom: "20px" }}>
-                            {currentUser && currentUser.email === "user@admin.com" && (
-                                <AddProjectModal onAddProject={handleAddProject} />
-                            )}
-                        </Col>
-                        {loading ? ( // Render spinner if loading
-                            <div style={{ display: 'flex', justifyContent: 'center' }}>
-                                <Spinner animation="border" variant="primary" style={{ width: '5rem', height: '5rem' }} />
-                            </div>
-                        ) : (
-                            <Row >
-                                {currentProjects.map((project, index) => (
-                                    <Col key={index} sm={12} md={4} className="mb-5">
-                                        <ProjectCard
-                                            key={project.id}
-                                            id={project.id}
-                                            price={project.price}
-                                            image_url={project.image_url}
-                                            title={project.title}
-                                            location={project.location}
-                                            description={project.description}
-                                            car_park={project.car_park}
-                                            bathroom={project.bathroom}
-                                            bedroom={project.bedroom}
-                                            room_size={project.room_size}
-                                            progress_percentage={project.progress_percentage}
-                                            onDelete={() => handleDeleteProject(project.id)}
-                                        />
-
-                                    </Col>
-                                ))}
-                            </Row>
-
-                        )}
-                        <Row className="justify-content-center mt-3">
-                            <Button
-                                variant="outline-primary"
-                                onClick={handlePrevPage}
-                                disabled={currentPage === 1}
-                                style={{ width: "100px", height: "40px", display: "flex", alignItems: "center", justifyContent: "flex-start", backgroundColor: "white", color: "blue", borderRadius: "10px" }}
-                            >
-                                <i className="bi bi-arrow-left"></i> Previous
-                            </Button>
-                            <Button
-                                variant="outline-primary"
-                                onClick={handleNextPage}
-                                disabled={currentPage === totalPages}
-                                style={{ width: "100px", height: "40px", backgroundColor: "white", color: "blue", marginLeft: "10px", borderRadius: "10px" }}
-                            >
-                                Next <i className="bi bi-arrow-right"></i>
-                            </Button>
-                        </Row>
-                    </Container>
-                </section>
-                <Footer />
-            </div>
+            </section>
+            <Footer />
         </>
     );
 }
