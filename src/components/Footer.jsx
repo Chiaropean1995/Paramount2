@@ -151,7 +151,7 @@ export default function Footer() {
                         </div>
                     </div>
                 </div >
-                <div style={{ backgroundColor: "#101b25", height: "50px" }}>
+                <div style={{ backgroundColor: "#101b25", height: "50px", width: "100%" }}>
                     <div className="container">
                         <div className="row align-items-center">
                             <div className="col-md-6 mt-0">
