@@ -49,95 +49,96 @@ export default function ContactUs() {
     return (
 
         <>
+            <div style={{ overflowX: "hidden" }}>
+                <Header />
+                <Navbar1 />
+                <Container fluid>
+                    <Row>
+                        <Col sm={12} className="p-0 position-relative">
+                            <img src={picture2} alt="Your image" height="250px" className="w-100 " style={{ filter: 'brightness(0.3)' }}></img>
+                        </Col>
+                        <h2 style={{ fontFamily: '"Source Sans Pro", sans-serif', left: '60px', top: '250px' }} className="font-weight-bold position-absolute text-white ">CONTACT US</h2>
 
-            <Header />
-            <Navbar1 />
-            <Container fluid>
-                <Row>
-                    <Col sm={12} className="p-0 position-relative">
-                        <img src={picture2} alt="Your image" height="250px" className="w-100 " style={{ filter: 'brightness(0.3)' }}></img>
-                    </Col>
-                    <h2 style={{ fontFamily: '"Source Sans Pro", sans-serif', left: '60px', top: '250px' }} className="font-weight-bold position-absolute text-white ">CONTACT US</h2>
+                    </Row>
+                </Container>
 
-                </Row>
-            </Container>
+                <Container style={{ paddingTop: "100px", paddingBottom: "100px" }} >
+                    <div className="d-flex h-100">
+                        <Col sm={6}>
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3984.1683991329314!2d101.44373708051346!3d3.049534345853114!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cc536627bb5bbf%3A0x6b99067098bb50a1!2sPerangsang%20Sentosa%20Sdn.%20Bhd.!5e0!3m2!1sen!2smy!4v1711784013370!5m2!1sen!2smy" style={{ border: "0", width: "100%", height: "100%", objectFit: "cover" }} allowfullscreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
+                        </Col>
+                        <Col sm={6} className="border shadow p-5" >
+                            <div className="text-center">
+                                <h4 style={{ fontFamily: '"Source Sans Pro", serif', borderBottom: '2px solid blue', paddingBottom: '5px', width: "auto" }}>CONTACT US</h4>
+                                <p style={{ fontFamily: 'Lato, Helvetica, Arial, sans-serif', fontSize: '13px' }}>Please fill out the form below to get in touch with us.</p>
 
-            <Container style={{ paddingTop: "100px", paddingBottom: "100px" }} >
-                <div className="d-flex h-100">
-                    <Col sm={6}>
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3984.1683991329314!2d101.44373708051346!3d3.049534345853114!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cc536627bb5bbf%3A0x6b99067098bb50a1!2sPerangsang%20Sentosa%20Sdn.%20Bhd.!5e0!3m2!1sen!2smy!4v1711784013370!5m2!1sen!2smy" style={{ border: "0", width: "100%", height: "100%", objectFit: "cover" }} allowfullscreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
-                    </Col>
-                    <Col sm={6} className="border shadow p-5" >
-                        <div className="text-center">
-                            <h4 style={{ fontFamily: '"Source Sans Pro", serif', borderBottom: '2px solid blue', paddingBottom: '5px', width: "auto" }}>CONTACT US</h4>
-                            <p style={{ fontFamily: 'Lato, Helvetica, Arial, sans-serif', fontSize: '13px' }}>Please fill out the form below to get in touch with us.</p>
+                            </div>
+                            <Form onSubmit={handleSubmit}>
+                                <div>
+                                    <Form.Group controlId="name">
+                                        <Form.Label className="text-secondary" style={{ fontFamily: 'Lato, Helvetica, Arial, sans-serif', fontSize: '13px' }} >Name:</Form.Label>
+                                        <Form.Control
+                                            type="text"
+                                            name="name"
+                                            placeholder="Name"
+                                            value={formData.name}
+                                            onChange={handleInputChange}
+                                            className="border-0 border-bottom rounded-0 shadow-none"
+                                            required
 
-                        </div>
-                        <Form onSubmit={handleSubmit}>
-                            <div>
-                                <Form.Group controlId="name">
-                                    <Form.Label className="text-secondary" style={{ fontFamily: 'Lato, Helvetica, Arial, sans-serif', fontSize: '13px' }} >Name:</Form.Label>
+                                        />
+                                    </Form.Group>
+                                    <Form.Group controlId="phone_number" className="mx-auto">
+                                        <Form.Label className="text-secondary" style={{ fontFamily: 'Lato, Helvetica, Arial, sans-serif', fontSize: '13px' }} >Phone Number:</Form.Label>
+                                        <Form.Control
+                                            type="text"
+                                            name="phone_number"
+                                            placeholder="Enter your phone"
+                                            value={formData.phone_number}
+                                            onChange={handleInputChange}
+                                            className="border-0 border-bottom rounded-0 shadow-none "
+
+                                            required
+                                        />
+                                    </Form.Group>
+                                </div>
+                                <Form.Group controlId="subject" className="mt-3">
+                                    <Form.Label className="text-secondary" style={{ fontFamily: 'Lato, Helvetica, Arial, sans-serif', fontSize: '13px' }} >Subject:</Form.Label>
                                     <Form.Control
                                         type="text"
-                                        name="name"
-                                        placeholder="Name"
-                                        value={formData.name}
+                                        name="subject"
+                                        placeholder="Enter your subject"
+                                        value={formData.subject}
                                         onChange={handleInputChange}
                                         className="border-0 border-bottom rounded-0 shadow-none"
                                         required
-
                                     />
                                 </Form.Group>
-                                <Form.Group controlId="phone_number" className="mx-auto">
-                                    <Form.Label className="text-secondary" style={{ fontFamily: 'Lato, Helvetica, Arial, sans-serif', fontSize: '13px' }} >Phone Number:</Form.Label>
-                                    <Form.Control
-                                        type="text"
-                                        name="phone_number"
-                                        placeholder="Enter your phone"
-                                        value={formData.phone_number}
-                                        onChange={handleInputChange}
-                                        className="border-0 border-bottom rounded-0 shadow-none "
+                                <div className="d-flex mt-3">
+                                    <Form.Group controlId="message">
+                                        <Form.Label className="text-secondary" style={{ fontFamily: 'Lato, Helvetica, Arial, sans-serif', fontSize: '13px' }} >Message:</Form.Label>
+                                        <Form.Control
+                                            type="text"
+                                            name="message"
+                                            placeholder="Your message"
+                                            value={formData.message}
+                                            onChange={handleInputChange}
+                                            style={{ width: "550px" }}
+                                            className="border-0 border-bottom rounded-0 shadow-none"
+                                            required
+                                        />
+                                    </Form.Group>
 
-                                        required
-                                    />
-                                </Form.Group>
-                            </div>
-                            <Form.Group controlId="subject" className="mt-3">
-                                <Form.Label className="text-secondary" style={{ fontFamily: 'Lato, Helvetica, Arial, sans-serif', fontSize: '13px' }} >Subject:</Form.Label>
-                                <Form.Control
-                                    type="text"
-                                    name="subject"
-                                    placeholder="Enter your subject"
-                                    value={formData.subject}
-                                    onChange={handleInputChange}
-                                    className="border-0 border-bottom rounded-0 shadow-none"
-                                    required
-                                />
-                            </Form.Group>
-                            <div className="d-flex mt-3">
-                                <Form.Group controlId="message">
-                                    <Form.Label className="text-secondary" style={{ fontFamily: 'Lato, Helvetica, Arial, sans-serif', fontSize: '13px' }} >Message:</Form.Label>
-                                    <Form.Control
-                                        type="text"
-                                        name="message"
-                                        placeholder="Your message"
-                                        value={formData.message}
-                                        onChange={handleInputChange}
-                                        style={{ width: "550px" }}
-                                        className="border-0 border-bottom rounded-0 shadow-none"
-                                        required
-                                    />
-                                </Form.Group>
-
-                            </div>
-                            <div style={{ marginTop: "50px" }}>
-                                <button type="submit" className="border-0 mt-3" style={{ backgroundColor: "#e75635", color: "white", width: "200px", height: "40px" }}>SUBMIT</button>
-                            </div>
-                        </Form>
-                    </Col>
-                </div>
-            </Container >
-            <Footer />
+                                </div>
+                                <div style={{ marginTop: "50px" }}>
+                                    <button type="submit" className="border-0 mt-3" style={{ backgroundColor: "#e75635", color: "white", width: "200px", height: "40px" }}>SUBMIT</button>
+                                </div>
+                            </Form>
+                        </Col>
+                    </div>
+                </Container >
+                <Footer />
+            </div>
         </>
     )
 }
