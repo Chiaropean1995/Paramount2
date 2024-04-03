@@ -50,56 +50,54 @@ export default function UpcomingProjects() {
 
     return (
         <>
-            <div style={{ overflowX: "hidden" }}>
-                <Header />
-                <Navbar1 />
-                <Container fluid>
-                    <Row>
-                        <Col sm={12} className="p-0 position-relative">
-                            <img src={picture2} alt="Your image" height="250px" className="w-100 " style={{ filter: 'brightness(0.3)' }}></img>
-                        </Col>
-                        <h2 style={{ fontFamily: '"Source Sans Pro", sans-serif', left: '60px', top: '250px' }} className="font-weight-bold position-absolute text-white ">UPCOMING PROJECTS</h2>
+            <Header />
+            <Navbar1 />
+            <Container fluid>
+                <Row>
+                    <Col sm={12} className="p-0 position-relative">
+                        <img src={picture2} alt="Your image" height="250px" className="w-100 " style={{ filter: 'brightness(0.3)' }}></img>
+                    </Col>
+                    <h2 style={{ fontFamily: '"Source Sans Pro", sans-serif', left: '60px', top: '250px' }} className="font-weight-bold position-absolute text-white ">UPCOMING PROJECTS</h2>
+                </Row>
+            </Container>
+            <Col sm={12} className="d-flex align-items-center justify-content-center" style={{ marginBottom: "20px", paddingTop: "50px" }}>
+                {currentUser && currentUser.email === "user@admin.com" && (
+                    <AddUpcomingProjectModal />
+                )}
+            </Col>
+
+            {
+                loading ? ( // Render spinner if loading
+                    <div style={{ display: 'flex', justifyContent: 'center' }} >
+                        <Spinner animation="border" variant="primary" style={{ width: '5rem', height: '5rem' }} />
+                    </div >
+                ) : (
+                    <Row >
+                        {upcomingProjects.map((upcomingProject, index) => (
+                            <Col key={index} sm={12} className="mb-5">
+                                <UpcomingProjectCard
+                                    key={upcomingProject.id}
+                                    id={upcomingProject.id}
+                                    price={upcomingProject.price}
+                                    image_url={upcomingProject.image_url}
+                                    title={upcomingProject.title}
+                                    location={upcomingProject.location}
+                                    description={upcomingProject.description}
+                                    car_park={upcomingProject.car_park}
+                                    bathroom={upcomingProject.bathroom}
+                                    bedroom={upcomingProject.bedroom}
+                                    room_size={upcomingProject.room_size}
+                                    onDelete={() => handleDeleteProject(upcomingProject.id)}
+
+                                />
+
+                            </Col>
+                        ))}
                     </Row>
-                </Container>
-                <Col sm={12} className="d-flex align-items-center justify-content-center" style={{ marginBottom: "20px", paddingTop: "50px" }}>
-                    {currentUser && currentUser.email === "user@admin.com" && (
-                        <AddUpcomingProjectModal />
-                    )}
-                </Col>
 
-                {
-                    loading ? ( // Render spinner if loading
-                        <div style={{ display: 'flex', justifyContent: 'center' }} >
-                            <Spinner animation="border" variant="primary" style={{ width: '5rem', height: '5rem' }} />
-                        </div >
-                    ) : (
-                        <Row >
-                            {upcomingProjects.map((upcomingProject, index) => (
-                                <Col key={index} sm={12} className="mb-5">
-                                    <UpcomingProjectCard
-                                        key={upcomingProject.id}
-                                        id={upcomingProject.id}
-                                        price={upcomingProject.price}
-                                        image_url={upcomingProject.image_url}
-                                        title={upcomingProject.title}
-                                        location={upcomingProject.location}
-                                        description={upcomingProject.description}
-                                        car_park={upcomingProject.car_park}
-                                        bathroom={upcomingProject.bathroom}
-                                        bedroom={upcomingProject.bedroom}
-                                        room_size={upcomingProject.room_size}
-                                        onDelete={() => handleDeleteProject(upcomingProject.id)}
-
-                                    />
-
-                                </Col>
-                            ))}
-                        </Row>
-
-                    )
-                }
-                <Footer />
-            </div>
+                )
+            }
+            <Footer />
 
         </>
     )

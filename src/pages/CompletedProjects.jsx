@@ -49,57 +49,55 @@ export default function CompletedProjects() {
 
     return (
         <>
-            <div style={{ overflowX: "hidden" }}>
-                <Header />
-                <Navbar1 />
-                <Container fluid>
-                    <Row>
-                        <Col sm={12} className="p-0 position-relative">
-                            <img src={picture2} alt="Your image" height="250px" className="w-100 " style={{ filter: 'brightness(0.3)' }}></img>
-                        </Col>
-                        <h2 style={{ fontFamily: '"Source Sans Pro", sans-serif', left: '60px', top: '250px' }} className="font-weight-bold position-absolute text-white ">COMPLETED PROJECTS</h2>
+            <Header />
+            <Navbar1 />
+            <Container fluid>
+                <Row>
+                    <Col sm={12} className="p-0 position-relative">
+                        <img src={picture2} alt="Your image" height="250px" className="w-100 " style={{ filter: 'brightness(0.3)' }}></img>
+                    </Col>
+                    <h2 style={{ fontFamily: '"Source Sans Pro", sans-serif', left: '60px', top: '250px' }} className="font-weight-bold position-absolute text-white ">COMPLETED PROJECTS</h2>
+                </Row>
+            </Container>
+            <Col sm={12} className="d-flex align-items-center justify-content-center" style={{ marginBottom: "20px", paddingTop: "50px" }}>
+                {currentUser && currentUser.email === "user@admin.com" && (
+                    <AddCompleteProjectModal />
+                )}
+            </Col>
+
+            {
+                loading ? ( // Render spinner if loading
+                    <div style={{ display: 'flex', justifyContent: 'center' }} >
+                        <Spinner animation="border" variant="primary" style={{ width: '5rem', height: '5rem' }} />
+                    </div >
+                ) : (
+                    <Row >
+                        {completedProjects.map((completedProject, index) => (
+                            <Col key={index} sm={12} className="mb-5">
+                                <CompleteProjectCard
+                                    key={completedProject.id}
+                                    id={completedProject.id}
+                                    price={completedProject.price}
+                                    image_url={completedProject.image_url}
+                                    title={completedProject.title}
+                                    location={completedProject.location}
+                                    description={completedProject.description}
+                                    car_park={completedProject.car_park}
+                                    bathroom={completedProject.bathroom}
+                                    bedroom={completedProject.bedroom}
+                                    room_size={completedProject.room_size}
+                                    onDelete={() => handleDeleteProject(completedProject.id)}
+
+                                />
+
+                            </Col>
+                        ))}
                     </Row>
-                </Container>
-                <Col sm={12} className="d-flex align-items-center justify-content-center" style={{ marginBottom: "20px", paddingTop: "50px" }}>
-                    {currentUser && currentUser.email === "user@admin.com" && (
-                        <AddCompleteProjectModal />
-                    )}
-                </Col>
 
-                {
-                    loading ? ( // Render spinner if loading
-                        <div style={{ display: 'flex', justifyContent: 'center' }} >
-                            <Spinner animation="border" variant="primary" style={{ width: '5rem', height: '5rem' }} />
-                        </div >
-                    ) : (
-                        <Row >
-                            {completedProjects.map((completedProject, index) => (
-                                <Col key={index} sm={12} className="mb-5">
-                                    <CompleteProjectCard
-                                        key={completedProject.id}
-                                        id={completedProject.id}
-                                        price={completedProject.price}
-                                        image_url={completedProject.image_url}
-                                        title={completedProject.title}
-                                        location={completedProject.location}
-                                        description={completedProject.description}
-                                        car_park={completedProject.car_park}
-                                        bathroom={completedProject.bathroom}
-                                        bedroom={completedProject.bedroom}
-                                        room_size={completedProject.room_size}
-                                        onDelete={() => handleDeleteProject(completedProject.id)}
+                )
+            }
 
-                                    />
-
-                                </Col>
-                            ))}
-                        </Row>
-
-                    )
-                }
-
-                <Footer />
-            </div>
+            <Footer />
         </>
     )
 }
