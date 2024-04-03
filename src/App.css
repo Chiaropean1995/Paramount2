@@ -35,8 +35,8 @@
 
 }
 
-@media only screen and (max-width: 567px) {
-  body {
+@media (max-width: 567px) {
+  .viewport {
     overflow-x: hidden;
   }
 }
