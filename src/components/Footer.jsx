@@ -53,18 +53,18 @@ export default function Footer() {
     return (
         <>
             <div style={{ paddingTop: "100px", width: "100%" }}>
-                <div className="extended-background1" style={{ backgroundColor: "#101b25", height: "50px", witdh: "100%" }} >
+                <div className="extended-background1" style={{ backgroundColor: "#101b25", height: "50px", witdh: "100%", margin: 0, padding: 0 }} >
                     {/* Outer layer */}
                 </div>
                 <div>
                     <div className="bg-light" style={{ width: "100%" }}>
                         {/* Middle layer */}
-                        <div className="container-fluid px-0" style={{ width: "100%" }}>
-                            <div className="row extended-background2" style={{ backgroundColor: "grey", height: "500px", width: "100%" }}>
+                        <div className="container-fluid px-0" style={{ width: "100%", margin: 0, padding: 0 }}>
+                            <div className="row extended-background2" style={{ backgroundColor: "grey", height: "500px", width: "100%", margin: 0, padding: 0 }}>
                                 <div className="col-md-12 text-center py-4">
                                     <Row>
                                         <Col sm={12} md={3} className="ms-0">
-                                            <img src={companylogo2} alt="Your Logo" height="100" width="250px" style={{ marginLeft: "60px" }} />
+                                            <img src={companylogo2} alt="Your Logo" height="100" width="250px" style={{ marginLeft: "60px", margin: 0, padding: 0 }} />
                                             <div className=" ms-5 p-3">
                                                 <p className="text-white mt-4" style={{ textAlign: "left" }}>
                                                     Building extraordinary properties demands exceptional
@@ -151,7 +151,7 @@ export default function Footer() {
                         </div>
                     </div>
                 </div >
-                <div style={{ backgroundColor: "#101b25", height: "50px", width: "100%" }}>
+                <div style={{ backgroundColor: "#101b25", height: "50px", width: "100%", margin: 0, padding: 0 }}>
                     <div className="container">
                         <div className="row align-items-center">
                             <div className="col-md-6 mt-0">
