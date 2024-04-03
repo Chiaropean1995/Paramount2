@@ -14,7 +14,7 @@ export default function CompleteUpcomingCard({ id, price, image_url, title, loca
     const [upcomingProjects, setUpcomingProject] = useState([])
     const [showModal, setShowModal] = useState(false);
     const [updatedImage, setUpdatedImage] = useState(null);
-    const url = "http://localhost:3000"
+    const url = "https://paramount2.onrender.com"
 
     const fetchUpcomingProjects = async () => {
         try {

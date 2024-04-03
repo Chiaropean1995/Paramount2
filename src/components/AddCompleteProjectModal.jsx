@@ -9,7 +9,7 @@ import axios from "axios"
 
 
 export default function AddCompleteProjectCard() {
-    const url = "http://localhost:3000"
+    const url = "https://paramount2.onrender.com"
     const [show, setShow] = useState(false);
     const [imageUrl, setImageURL] = useState(null);
     const [file, setFile] = useState(null);
