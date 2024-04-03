@@ -53,14 +53,14 @@ export default function Footer() {
     return (
         <>
             <div style={{ paddingTop: "100px" }}>
-                <div className="extended-background1" style={{ backgroundColor: "#101b25", height: "50px" }} >
+                <div className="extended-background1" style={{ backgroundColor: "#101b25", height: "50px", witdh: "100%" }} >
                     {/* Outer layer */}
                 </div>
                 <div>
                     <div className="bg-light">
                         {/* Middle layer */}
                         <div className="container-fluid px-0">
-                            <div className="row extended-background2" style={{ backgroundColor: "grey", height: "500px", width: "1550px" }}>
+                            <div className="row extended-background2" style={{ backgroundColor: "grey", height: "500px", width: "100%" }}>
                                 <div className="col-md-12 text-center py-4">
                                     <Row>
                                         <Col sm={12} md={3} className="ms-0">
