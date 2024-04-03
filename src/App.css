@@ -3,6 +3,12 @@ body {
 
 }
 
+@media (max-width: 567px) {
+  body {
+    overflow-x: hidden !important;
+  }
+}
+
 .social-links a:hover i,
 .top-links a:hover i,
 .top-links a:hover span {
