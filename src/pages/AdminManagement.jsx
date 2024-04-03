@@ -41,45 +41,43 @@ export default function AdminManagement() {
 
     return (
         <>
-            <div style={{ overflowX: "hidden" }}>
-                <Header />
-                <Navbar1 />
-                <Container fluid>
-                    <Row>
-                        <Col sm={12} className="p-0 position-relative">
-                            <img src={picture2} alt="Your image" height="250px" className="w-100 " style={{ filter: 'brightness(0.3)' }}></img>
-                        </Col>
-                        <h2 style={{ fontFamily: '"Source Sans Pro", sans-serif', left: '60px', top: '250px' }} className="font-weight-bold position-absolute text-white ">ADMIN MANAGEMENT</h2>
-                    </Row>
-                </Container>
-                <div style={{ paddingTop: '80px' }}>
-                    <Container>
-                        <table className="table table-bordered table-sm">
-                            <thead className="table-dark text-center">
-                                <tr>
-                                    <th>Name</th>
-                                    <th>Phone</th>
-                                    <th>Subject</th>
-                                    <th>Message</th>
-                                    <th>Action</th>
+            <Header />
+            <Navbar1 />
+            <Container fluid>
+                <Row>
+                    <Col sm={12} className="p-0 position-relative">
+                        <img src={picture2} alt="Your image" height="250px" className="w-100 " style={{ filter: 'brightness(0.3)' }}></img>
+                    </Col>
+                    <h2 style={{ fontFamily: '"Source Sans Pro", sans-serif', left: '60px', top: '250px' }} className="font-weight-bold position-absolute text-white ">ADMIN MANAGEMENT</h2>
+                </Row>
+            </Container>
+            <div style={{ paddingTop: '80px' }}>
+                <Container>
+                    <table className="table table-bordered table-sm">
+                        <thead className="table-dark text-center">
+                            <tr>
+                                <th>Name</th>
+                                <th>Phone</th>
+                                <th>Subject</th>
+                                <th>Message</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody className="text-center">
+                            {contacts.map((contact, index) => (
+                                <tr key={index}>
+                                    <td>{contact.name}</td>
+                                    <td>{contact.phone_number}</td>
+                                    <td>{contact.subject}</td>
+                                    <td>{contact.message}</td>
+                                    <td> <i onClick={() => handleDeleteBooking(contact.id)} className="bi bi-trash" style={{ cursor: 'pointer', marginRight: '10px' }}></i></td>
                                 </tr>
-                            </thead>
-                            <tbody className="text-center">
-                                {contacts.map((contact, index) => (
-                                    <tr key={index}>
-                                        <td>{contact.name}</td>
-                                        <td>{contact.phone_number}</td>
-                                        <td>{contact.subject}</td>
-                                        <td>{contact.message}</td>
-                                        <td> <i onClick={() => handleDeleteBooking(contact.id)} className="bi bi-trash" style={{ cursor: 'pointer', marginRight: '10px' }}></i></td>
-                                    </tr>
-                                ))}
-                            </tbody>
-                        </table>
-                    </Container>
-                </div>
-                <Footer />
+                            ))}
+                        </tbody>
+                    </table>
+                </Container>
             </div>
+            <Footer />
 
 
         </>
