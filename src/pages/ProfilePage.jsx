@@ -12,7 +12,6 @@ import { Spinner } from "react-bootstrap";
 import { Col, Container, Row, Button, Carousel } from "react-bootstrap";
 import axios from "axios"
 import { AuthContext } from "../components/AuthProvider";
-import '../App.css'
 
 
 
