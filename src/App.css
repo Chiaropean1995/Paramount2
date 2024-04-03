@@ -1,6 +1,5 @@
 html {
   height: 100%;
-  overflow: hidden;
 }
 
 body {
@@ -8,6 +7,8 @@ body {
   width: 100vw;
   height: 100%;
   overflow-x: hidden;
+  overflow-y: auto;
+  /* Allow vertical scrolling */
 }
 
 .social-links a:hover i,
