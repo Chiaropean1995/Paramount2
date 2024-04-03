@@ -1,9 +1,8 @@
 html,
 body {
-  overflow-x: hidden;
-  width: 100%;
+  overflow-x: hidden !important;
+  width: 100vw !important;
 }
-
 
 .social-links a:hover i,
 .top-links a:hover i,
