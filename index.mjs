@@ -8,11 +8,7 @@ dotenv.config();
 
 const { DATABASE_URL } = process.env;
 
-import { fileURLToPath } from 'url';
-import { dirname } from 'path';
 
-// Get the directory name of the current module
-const __dirname = dirname(fileURLToPath(import.meta.url));
 
 
 const app = express();
