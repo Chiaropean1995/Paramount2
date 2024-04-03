@@ -8,7 +8,6 @@ body {
   width: 100vw;
   height: 100%;
   overflow-x: hidden;
-  -webkit-overflow-scrolling: touch;
 }
 
 .social-links a:hover i,
