@@ -81,7 +81,7 @@ export default function Gallery() {
 
     return (
         <>
-            <div>
+            <div style={{ overflowX: "hidden" }}>
                 <Header />
                 <Navbar1 />
                 <Container fluid>

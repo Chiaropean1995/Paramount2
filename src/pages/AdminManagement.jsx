@@ -41,7 +41,7 @@ export default function AdminManagement() {
 
     return (
         <>
-            <div className="overflow-hidden">
+            <div style={{ overflowX: "hidden" }}>
                 <Header />
                 <Navbar1 />
                 <Container fluid>

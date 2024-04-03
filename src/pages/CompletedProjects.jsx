@@ -49,7 +49,7 @@ export default function CompletedProjects() {
 
     return (
         <>
-            <div>
+            <div style={{ overflowX: "hidden" }}>
                 <Header />
                 <Navbar1 />
                 <Container fluid>

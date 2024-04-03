@@ -9,7 +9,7 @@ import '../App.css'
 export default function AboutUs() {
     return (
         <>
-            <div className="overflow-hidden">
+            <div style={{ overflowX: "hidden" }}>
                 <Header />
                 <Navbar1 />
                 <Container fluid>
