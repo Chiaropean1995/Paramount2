@@ -36,7 +36,7 @@
 }
 
 @media (max-width: 567px) {
-  html body {
+  body {
     overflow-x: hidden !important;
   }
 }
