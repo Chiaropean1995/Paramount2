@@ -9,21 +9,10 @@ import LoanCalculator from './pages/LoanCalculator'
 import Gallery from "./pages/Gallery"
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { AuthProvider } from "./components/AuthProvider";
-import { useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
 
 function App() {
-  const location = useLocation();
 
-  useEffect(() => {
-    // Add overflow-x: hidden to the body element when navigating to any route
-    document.body.style.overflowX = 'hidden';
 
-    return () => {
-      // Cleanup the effect when component unmounts
-      document.body.style.overflowX = ''; // Reset overflow-x to its default value
-    };
-  }, [location]);
   return (
     <>
       <AuthProvider>
