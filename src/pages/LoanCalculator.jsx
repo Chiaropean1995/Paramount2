@@ -47,7 +47,7 @@ const PaymentCalculator = () => {
 
     return (
         <>
-            <div>
+            <div className="overflow-hidden">
                 <Header />
                 <Navbar1 />
                 <Container fluid>

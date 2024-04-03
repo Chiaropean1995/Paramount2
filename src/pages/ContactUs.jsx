@@ -48,7 +48,7 @@ export default function ContactUs() {
     return (
 
         <>
-            <div className="viewport">
+            <div className="overflow-hidden">
                 <Header />
                 <Navbar1 />
                 <Container fluid>

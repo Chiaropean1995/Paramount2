@@ -8,7 +8,7 @@ import Footer from '../components/Footer'
 export default function JointVenture() {
     return (
         <>
-            <div className="viewport">
+            <div className="overflow-hidden">
                 <Header />
                 <Navbar1 />
                 <Container fluid>
